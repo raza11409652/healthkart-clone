@@ -11,7 +11,7 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-        <img src="https://img2.hkrtcdn.com/10640/bnr_1063971_o.jpg" class="d-block w-100" alt="...">
+        <img src="https://img10.hkrtcdn.com/10642/bnr_1064119_o.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
         <img src="https://img6.hkrtcdn.com/10640/bnr_1063935_o.jpg" class="d-block w-100" alt="...">
