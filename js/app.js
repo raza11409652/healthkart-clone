@@ -40,6 +40,27 @@ function plusCart(id){
 }
 function removeCart(id){
   console.log(id);
+  const formData = "id="+id;
+  $.ajax({
+      type:'POST' ,
+      url:'./api/CartUpdate.php' ,
+      data : formData ,
+      beforeSend:function(){
+
+      } ,
+      success:function(response){
+          var result  = JSON.parse(response) ;
+          if(result.error == false){
+            toast({
+                type:'success' ,
+                text:'cart updated'
+            })  ;
+            setTimeout(()=>{
+                location.reload();
+            } , 800) ;
+          }
+      }
+  }) ;
 }
 function addCart(id){
   //  console.log(id);
@@ -64,10 +85,11 @@ function addCart(id){
                   }
               return ;
             }else if(result.error == false){
+              cartCounter();
                 toast({
                   type:'success',
                   text:result.msg
-                })
+                }) ;
             }
         }
     });

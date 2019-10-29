@@ -303,3 +303,15 @@ border: 1px solid rgb(126, 50, 158);
     user-select: none;
 
 }
+.cart-empty{
+max-width: 560px;
+margin-left: auto;
+margin-right: auto;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
+.cart-empty img{
+  max-width: 256px
+}
