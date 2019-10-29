@@ -1,3 +1,9 @@
+<?php 
+    include_once "controller/Connection.php";
+    $obj =new Connection();
+    $connection = $obj->getConnect();
+    #var_dump($connection);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

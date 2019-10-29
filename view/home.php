@@ -14,7 +14,7 @@
         <img src="https://img10.hkrtcdn.com/10642/bnr_1064119_o.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-        <img src="https://img6.hkrtcdn.com/10640/bnr_1063935_o.jpg" class="d-block w-100" alt="...">
+        <img src="https://img2.hkrtcdn.com/10642/bnr_1064121_o.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
         <img src="https://img8.hkrtcdn.com/10640/bnr_1063937_o.jpg" class="d-block w-100" alt="...">
@@ -39,17 +39,28 @@
             </div>
             <!-- content -->
             <div class="row ">
-                <div class="col-lg-3 wow zoomIn" data-wow-duration="1s">
+                <?php 
+                    $query = "select * from product_type LIMIT 4" ; 
+                    $res = mysqli_query($connection , $query);
+                    $count = mysqli_num_rows($res);
+                    //var_dump($count);
+                    while($data = mysqli_fetch_assoc($res)){
+                        ?>
+                <a class="col-lg-3 wow zoomIn" data-wow-duration="1s" href="?v=product&type=<?php echo $data['product_type_id'] ?>">
                     <div class="card-trend-item">
                         <div class="card-image">
-                            <img src="image/drink.svg" alt="">
+                            <img src="image/<?php echo $data['product_type_image'] ?>" alt="<?php echo $data['product_type_val'] ?>">
                         </div>
                         <div class="card-text text-center">
-                            <h5>Mass gainer</h5>
+                            <h5><?php echo $data['product_type_val'] ?></h5>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 wow zoomIn" data-wow-duration="1s">
+                </a>
+                        <?php 
+                    }
+                ?>
+               
+                <!-- <div class="col-lg-3 wow zoomIn" data-wow-duration="1s">
                     <div class="card-trend-item">
                         <div class="card-image">
                             <img src="image/protein.svg" alt="">
@@ -78,10 +89,10 @@
                             <h5>Mass gainer</h5>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="text-center mt-5">
-                <a href="" class="btn btn-theme-primary">View All</a>
+                <a href="?v=product" class="btn btn-theme-primary">View All</a>
             </div>
         </div>
 </section>
