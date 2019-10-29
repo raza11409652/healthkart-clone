@@ -100,8 +100,8 @@ border: 1px solid rgb(126, 50, 158);
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
 .btn-theme-primary{
-    
-   
+
+
     background: transparent;
     border: 1px solid #825C92 ;
     color: #825C92;
@@ -259,10 +259,10 @@ border: 1px solid rgb(126, 50, 158);
     background:#FFF;
     margin: 0;
     padding: 10px 8px;
-    
+
 }
 .product-type-list li{
-    list-style: none;  
+    list-style: none;
 }
 .product-type-list li a{
     padding: 20px 14px;
@@ -278,4 +278,12 @@ border: 1px solid rgb(126, 50, 158);
 }
 .list-group-item.active  a{
     color: #ffffff;
+}
+.counter{
+  font-size: 10px;
+  width:16px;
+  height:16px;
+  border-radius:  50%;
+  background: #ffffff ;
+  color:#222222;
 }

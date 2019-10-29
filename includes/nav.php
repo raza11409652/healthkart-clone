@@ -19,13 +19,36 @@
         </li>
       </ul>
       <ul class="navbar-nav ">
-      <li class=" nav-item ">
+        <?php
+        if(isset($_SESSION) && !empty($_SESSION['loggedIn'])
+        && !empty($_SESSION['userLoggedIn'])){
+          ?>
+          <li class=" nav-item ml-1">
+            <a href="?v=cart" class="btn btn-info">cart
+              <span id="cart_counter">0</span> </a>
+          </li>
+          <li class=" nav-item ml-1">
+            <a href="?v=logout" class="btn btn-danger">Logout</a>
+          </li>
+          <?php
+        }else{
+          ?>
+          <li class=" nav-item ">
+              <a href="?v=register" class="btn btn-theme-primary">Register</a>
+            </li>
+            <li class=" nav-item ml-1">
+              <a href="?v=login" class="btn btn-danger">Login</a>
+            </li>
+          <?php
+        }
+         ?>
+      <!-- <li class=" nav-item ">
           <a href="?v=register" class="btn btn-theme-primary">Register</a>
         </li>
         <li class=" nav-item ml-1">
           <a href="?v=login" class="btn btn-danger">Login</a>
-        </li>
-       
+        </li> -->
+
       </ul>
     </div>
   </div>

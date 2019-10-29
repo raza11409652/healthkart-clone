@@ -1,6 +1,11 @@
 <?php
     require_once "includes/header.php";
     require_once "includes/nav.php";
+    $callBackUrl = null;
+    if(isset($_GET['callback'])){
+      $callBackUrl = $_GET['callback'];
+    //  echo $callBackUrl;
+    }
 ?>
 <section class="login-wrapper">
     <div class="container">
@@ -11,20 +16,23 @@
             Get exclusive deals and offers
             Personalized recommendations.
             </p>
-            <div class="form-group">
-                <label for="userEmail">Enter Your Registered Email</label>
-                <input type="email" name="userEmail" placeholder="email@gmail.com"  class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="userPassword">Enter Password</label>
-                <input name="userPassword" placeholder="**********" type="password" class="form-control">
-            </div>
-            <p class="float-right">
-                <a href="?v=forget" class="">Forget Password?</a>
-            </p>
-            <div class="form-group mt-4">
-                <button class="btn btn-danger">Login</button>
-            </div>
+            <form id="loginForm" method="post">
+              <input type="text" name="callback" value="<?php echo $callBackUrl ?>" hidden>
+              <div class="form-group">
+                  <label for="userEmail">Enter Your Registered Email</label>
+                  <input type="email" required name="userEmail" placeholder="email@gmail.com"  class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="userPassword">Enter Password</label>
+                  <input name="userPassword" required placeholder="**********" type="password" class="form-control">
+              </div>
+              <p class="float-right">
+                  <a href="?v=forget" class="">Forget Password?</a>
+              </p>
+              <div class="form-group mt-4">
+                  <button class="btn btn-danger" type="submit">Login</button>
+              </div>
+            </form>
             <div class="text-center">
                 <a href="?v=register">New user ? Register Now</a>
             </div>

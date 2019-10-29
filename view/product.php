@@ -50,7 +50,7 @@
                     <?php 
                         while($data = mysqli_fetch_array($res)){
                             ?>
-                        <a href="" class="col-lg-3">
+                        <div  class="col-lg-3">
                           <div class="product-card">
                               
                               <div class="image-holder">
@@ -79,11 +79,12 @@
                                   ?>
                                 <!-- Rs.<?php echo $data['product_price'] ?> -->
                               </div>
+                              <button class="btn btn-block btn-sm btn-success" onclick="addCart('<?php echo $data['product_id'] ?>')">ADD to cart</button>
                               <span class="offer">
                                   <?php  echo "{$discount}% Off";?>
                               </span>
                           </div>
-                        </a>  
+                        </div> 
                             <?php
                         }
                     ?>
