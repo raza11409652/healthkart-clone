@@ -287,3 +287,19 @@ border: 1px solid rgb(126, 50, 158);
   background: #ffffff ;
   color:#222222;
 }
+.cart-plus , .cart-minus{
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8203125rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}

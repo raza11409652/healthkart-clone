@@ -4,6 +4,43 @@ const toast = swal.mixin({
     showConfirmButton: false,
     timer: 2000
 });
+function plusCart(id){
+  // console.log(id);
+    const productId = id ;
+    //first check whether user is login otr not
+    //if not login go to login page
+    $.ajax({
+        type:'POST'  ,
+        url:'./api/AddCart.php' ,
+        data:"product="+productId,
+        beforeSend:function(){
+
+        },
+        success:(response)=>{
+            console.log(response);
+            var result = JSON.parse(response) ;
+            if(result.error == true){
+              const errorCode = result.errorCode ;
+                if(errorCode == 101){
+                const callback = result.callBackUrl ;
+                     window.location.href='?v=login&callback='+callback;
+                  }
+              return ;
+            }else if(result.error == false){
+                toast({
+                  type:'success',
+                  text:"Cart updated"
+                })
+                setTimeout(()=>{
+                  location.reload();
+                },800);
+            }
+        }
+    });
+}
+function removeCart(id){
+  console.log(id);
+}
 function addCart(id){
   //  console.log(id);
     const productId = id ;
