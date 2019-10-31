@@ -2,6 +2,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/checkout.js"></script>
     <script>
          $(function() {
             wow = new WOW({

@@ -101,7 +101,7 @@
       <div class="float-right">
           <div class="btn-group">
               <a href="?v=product" class="btn btn-info">Shop More</a>
-              <a href="#" class="btn btn-danger">Checkout</a>
+              <a href="?v=checkout" class="btn btn-danger">Checkout</a>
           </div>
       </div>
       <?php

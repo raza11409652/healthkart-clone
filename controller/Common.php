@@ -6,6 +6,11 @@
           }
           return false;
       }
+      function validPinCode($text){
+        $regex ="^[1-9][0-9]{5}$";
+        if(preg_match($regex , $text)) return true;
+        return false;
+      }
       function validEmail($email){
           $email = filter_var($email, FILTER_SANITIZE_EMAIL);
           if (filter_var($email, FILTER_VALIDATE_EMAIL)) {

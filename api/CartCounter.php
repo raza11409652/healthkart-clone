@@ -37,6 +37,11 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     $response['error'] = false ;
     $response['count'] = $obj->cartCount($userId);
     echo json_encode($response);
+  }else{
+    // $userId = $obj->getUserId($loggedInEmail);
+    $response['error'] = true ;
+    $response['count'] = 0;
+    echo json_encode($response);
   }
 }
 ?>

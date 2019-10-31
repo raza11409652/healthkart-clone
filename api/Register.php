@@ -99,7 +99,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       echo json_encode($response);
       return;
     }else {
-        $hashPassword= password_hash($password , PASSWORD_BCRYPT , $options);
+        $hashPassword= md5($password);
         //echo $hashPassword;
 
         if($obj->startRegistration($email , $name , $mobile , $hashPassword)){

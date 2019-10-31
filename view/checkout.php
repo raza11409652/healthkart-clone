@@ -3,6 +3,7 @@
     require_once "includes/nav.php";
     $loggedInEmail = null;
     $err = null;
+    $total = 0;
     if(isset($_SESSION) && !empty($_SESSION['loggedIn'])
     && !empty($_SESSION['userLoggedIn'])){
       $loggedInEmail=$_SESSION['userLoggedIn'] ;
@@ -42,39 +43,42 @@
             Billing   Address
             </div>
             <div class="card-body">
+            <form id="checkOutForm" method="post">
+              <input type="text" name="userLoggedIn" hidden value="<?php echo $loggedInEmail ?>">
                 <div class="row">
                       <div class="col-lg-6">
-                        <input type="text" name="name" placeholder="Name" class="form-control"  value="">
+                        <input required type="text" name="name" placeholder="Name" class="form-control"  value="">
                       </div>
                       <div class="col-lg-6">
-                        <input type="email" name="email" placeholder="Email" class="form-control"  value="<?php echo $loggedInEmail ?>">
+                        <input required  type="email" name="email" placeholder="Email" class="form-control"  value="<?php echo $loggedInEmail ?>">
                       </div>
                 </div>
                 <div class="row mt-4">
                       <div class="col-lg-6">
-                        <input type="text" name="mobile" placeholder="Mobile Number" class="form-control"  value="">
+                        <input required type="text" name="mobile" placeholder="Mobile Number" class="form-control"  value="">
                       </div>
                       <div class="col-lg-6">
-                        <input type="text" class="form-control" name="pincode" placeholder="PINCODE" value="">
+                        <input required type="text" class="form-control" pattern="[1-9][0-9]{5}" name="pincode" placeholder="PINCODE" value="">
                       </div>
                 </div>
                 <div class="row mt-4">
                   <div class="col-lg-12">
-                    <textarea name="address" placeholder="Your Address" class="form-control " rows="8" cols="80"></textarea>
+                    <textarea required name="address" placeholder="Your Address" class="form-control " rows="8" cols="80"></textarea>
 
                   </div>
                 </div>
               <div class="row mt-3">
                 <div class="col-lg-8">
                   <select class="form-control" name="">
-                    <option value="">Cash On delivery (COD)</option>
-                    <option value="">Pay Online (Debit card ,Credit card)</option>
+                    <option value="1">Cash On delivery (COD)</option>
+                    <option value="2">Pay Online (Debit card ,Credit card)</option>
                   </select>
                 </div>
                 <div class="col-lg-4">
-                  <button type="button" name="button" class="btn btn-info btn-block">Place Order</button>
+                  <button type="submit" name="button" class="btn btn-info btn-block">Place Order</button>
                 </div>
               </div>
+            </form>
             </div>
         </div>
     </div>
@@ -92,7 +96,7 @@
         <tbody>
           <?php
           $i=1 ;
-          $total = 0;
+
           while ($data = mysqli_fetch_array($res) ) {
             // code...
             // var_dump($data);

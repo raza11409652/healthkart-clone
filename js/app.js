@@ -127,6 +127,27 @@ cartCounter();
           },
           success:(response)=>{
             console.log(response);
+            var msg = JSON.parse(response) ;
+            if(msg.error == false){
+              const url = msg.callBackUrl ;
+              toast({
+                type:'success' ,
+                text:'login success'
+              });
+              if(url=="" || url == null){
+                setTimeout(function(){
+                  window.location.href='index.php';
+                } , 1000);
+              }else{
+                setTimeout(function(){
+                  window.location.href=url;
+                } , 1000);
+              }
+            }else{
+              console.log(msg);
+              toast({type:'error' , text:'Error '+msg.msg})
+
+            }
           }
       });
   });
@@ -206,5 +227,28 @@ cartCounter();
             }
           }
       });
+
+
+
   });
+  $('#forgetForm').on('submit' , (event)=>{
+      event.preventDefault();
+      var data = $('#forgetForm').serialize();
+      console.log(data);
+      $.ajax({
+          type:'POST' ,
+          url:'./api/Forget.php' ,
+          data:data ,
+          beforeSend:()=>{
+
+          } ,
+          success:(response)=>{
+            console.log(response);
+          }
+      });
+  });
+
+
+  //Check outForm Handler
+  
 });
