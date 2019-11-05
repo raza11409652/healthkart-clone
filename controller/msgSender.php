@@ -5,7 +5,7 @@ function sendTextMsg($mobile , $msg)
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-    CURLOPT_URL => "http://api.msg91.com/api/sendhttp.php?country=91&sender=DROIDH&route=4&mobiles=$mobile&authkey=125859A41atJaHbk0D5c028bb8&encrypt=1&message=$msg&unicode=1",
+    CURLOPT_URL => "http://api.msg91.com/api/sendhttp.php?country=91&sender=GYMKRT&route=4&mobiles=$mobile&authkey=216351ApmPu4hzOa5dc01772&encrypt=1&message=$msg&unicode=1",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
@@ -22,10 +22,10 @@ function sendTextMsg($mobile , $msg)
     curl_close($curl);
 
     if ($err) {
-        //echo "cURL Error #:" . $err;
+        // echo "cURL Error #:" . $err;
         return false;
       } else {
-        #echo $response;
+        // echo $response;
         return true;
       }
       return false;

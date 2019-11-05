@@ -12,23 +12,34 @@
           <a class="nav-link" href="./">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="?v=bmi">BMI</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
-        </li>
+        </li> -->
       </ul>
       <ul class="navbar-nav ">
         <?php
         if(isset($_SESSION) && !empty($_SESSION['loggedIn'])
         && !empty($_SESSION['userLoggedIn'])){
           ?>
+
+          <li class=" nav-item ml-1">
+            <!-- <a href="?v=logout" class="btn btn-danger">Logout</a> -->
+            <div class="dropdown">
+  <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Account
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="?v=orders">Orders</a>
+    <!-- <a class="dropdown-item" href="#">Another action</a> -->
+    <a class="dropdown-item" href="?v=logout">Logout</a>
+  </div>
+</div>
+          </li>
           <li class=" nav-item ml-1">
             <a href="?v=cart" class="btn btn-info">cart
               <span id="cart_counter">0</span> </a>
-          </li>
-          <li class=" nav-item ml-1">
-            <a href="?v=logout" class="btn btn-danger">Logout</a>
           </li>
           <?php
         }else{

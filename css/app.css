@@ -315,3 +315,131 @@ align-items: center;
 .cart-empty img{
   max-width: 256px
 }
+.help-bmi{
+  padding: 2.5rem 0;
+  background: #FDD200;
+}
+.bmi-index{
+  padding:10% 0;
+  min-height: 100vh;
+}
+.offer{
+    position: absolute;
+    right: 18px;
+    top :50px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: #FDD200;
+    z-index: 10;
+}
+#footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #222222;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+#footer .btn {
+    line-height: 1.5rem;
+}
+
+#footer .footer-social {
+    margin-top: 1rem;
+}
+
+#footer .footer-social a {
+    font-size: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+#footer .list-title {
+    font-weight: 600;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#footer ul li {
+    padding: 3px 0;
+    font-size: 15px;
+}
+
+#footer ul li a {
+    color: #999;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+#footer ul li a:hover {
+    text-decoration: none;
+    color: #AAA;
+}
+
+#footer .subscribe-input,
+#footer .subscribe-button {
+    border: none;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#footer .footer-payments {
+    margin-top: 1rem;
+    font-size: 28px;
+}
+
+#footer .footer-credits {
+    color: #FFF;
+    margin-top: 1rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid;
+    font-size: 13px;
+    border-top-color: rgba(0, 0, 0, 0.15);
+}
+
+#footer .horizontal-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#footer .horizontal-list li {
+    cursor: pointer;
+    float: left;
+    height: 32px;
+    width: 32px;
+    background: #FFF;
+    color: #222;
+    margin: 1.5px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+#footer .horizontal-list li a {
+    align-self: center;
+    font-size: 18px;
+}
+
+.fb-color {
+    color: #29487d !important;
+}
+
+.insta-color {
+    color: #000;
+}
+
+.wa-color {
+    color: #00E676 !important;
+}

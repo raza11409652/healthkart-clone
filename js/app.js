@@ -244,11 +244,52 @@ cartCounter();
           } ,
           success:(response)=>{
             console.log(response);
+            var msg = JSON.parse(response) ;
+              if(msg.error == true){
+                toast({
+                    type:'warning',
+                    text :msg.msg
+                }) ;
+              }else if(msg.error == false){
+                toast({
+                    type:'success',
+                    text :msg.msg
+                }) ;
+              }
+          }
+      });
+  });
+  $('#resetForm').on('submit' , (event)=>{
+      event.preventDefault();
+      const data = $('#resetForm').serialize();
+      $.ajax({
+          type:'POST' ,
+          url:'./api/Reset.php' ,
+          data : data,
+          beforeSend:()=>{
+
+          } ,
+          success:(response)=>{
+            console.log(response);
+            var r = JSON.parse(response) ;
+            if(r.error==false){
+              toast({
+                type:'success' ,
+                text:r.msg
+              }) ;
+              setTimeout(()=>{
+                  window.location.href=`?v=login`;
+              },1000);
+            }else{
+              toast({
+                type:'warning' ,
+                text:r.msg
+              })
+            }
           }
       });
   });
 
-
   //Check outForm Handler
-  
+
 });

@@ -39,8 +39,8 @@
             </div>
             <!-- content -->
             <div class="row ">
-                <?php 
-                    $query = "select * from product_type LIMIT 4" ; 
+                <?php
+                    $query = "select * from product_type LIMIT 4" ;
                     $res = mysqli_query($connection , $query);
                     $count = mysqli_num_rows($res);
                     //var_dump($count);
@@ -56,10 +56,10 @@
                         </div>
                     </div>
                 </a>
-                        <?php 
+                        <?php
                     }
                 ?>
-               
+
                 <!-- <div class="col-lg-3 wow zoomIn" data-wow-duration="1s">
                     <div class="card-trend-item">
                         <div class="card-image">
@@ -96,5 +96,16 @@
             </div>
         </div>
 </section>
-
+<section class="help-bmi">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+            <h2 class="">Need Help to choose best prduct for you</h2>
+        </div>
+    </div>
+    <div class="text-center">
+        <a href="?v=bmi" class="btn btn-primary">Calcaulate BMI</a>
+    </div>
+  </div>
+</section>
 <?php require_once "includes/footer.php"; ?>

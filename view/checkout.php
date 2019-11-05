@@ -44,6 +44,7 @@
             </div>
             <div class="card-body">
             <form id="checkOutForm" method="post">
+              <!-- <input type="text" name="totalBill" value="<?php echo $total ?>"> -->
               <input type="text" name="userLoggedIn" hidden value="<?php echo $loggedInEmail ?>">
                 <div class="row">
                       <div class="col-lg-6">
@@ -69,9 +70,9 @@
                 </div>
               <div class="row mt-3">
                 <div class="col-lg-8">
-                  <select class="form-control" name="">
+                  <select class="form-control" name="payment">
                     <option value="1">Cash On delivery (COD)</option>
-                    <option value="2">Pay Online (Debit card ,Credit card)</option>
+                    <!-- <option value="2">Pay Online (Debit card ,Credit card)</option> -->
                   </select>
                 </div>
                 <div class="col-lg-4">
